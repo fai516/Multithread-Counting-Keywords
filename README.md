@@ -9,7 +9,7 @@ You can choose the number of the reader(mapper), counter(reducer), and the keywo
 1.The program will first grab all the file name from `files.dat` and put it into the `file queue`.  
 2.Depends on the number of threads you choose, they will start to read file from the `file queue`.  
 3.Each `mapper` will be designated a single file and start to count. Then it will push the result into the `count queue`  
-4.Cocurrenly, each `reducer` will grab the `first 2 number` from the `count queue`, sum them up and push it back to `count queue`  
+4.Cocurrenly, each `reducer` will grab the `first 2 numbers` from the `count queue`, sum them up and push it back to `count queue`  
 5.The program will stop when the size of `file queue` is equal to `0` and the size of `count queue` is equal to `1`  
 6.The result(total count of keyword among text files) will be the only element of `count queue`  
 
