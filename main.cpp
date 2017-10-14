@@ -152,10 +152,10 @@ void multithread::reducer::startSumming(){
         count_queue.pop_front();//[b,c....]
         b = count_queue.front();//[b,c....]
         count_queue.pop_front();//[c....]
-        multithread::consoleOutMTX.lock();
+        //multithread::consoleOutMTX.lock();
         sum=a+b;
         cout << "Reducer #" << id+1 << " pushing " << a << "+" << b << "=" << sum << " into count_queue"<< endl;
-        multithread::consoleOutMTX.unlock();
+        //multithread::consoleOutMTX.unlock();
         count_queue.push_back(sum);//[c....,sum];
         multithread::countQueueMTX.unlock();
     }
