@@ -7,6 +7,7 @@ You can choose the number of the reader(mapper), counter(reducer), and the keywo
 
 ## How it works
 1.The program will first grab all the file name from `files.dat` and put it into the `file queue`.
+
 2.Depends on the number of threads you choose, they will start to read file from the `file queue`.
 3.Each `mapper` will be designated a single file and start to count. Then it will push the result into the `count queue`
 4.Cocurrenly, each `reducer` will grab the `first 2 number` from the `count queue`, sum them up and push it back to `count queue`
