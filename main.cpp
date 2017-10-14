@@ -83,6 +83,7 @@ int main(){
 
   UserInput(N_mapper,N_reducer,keyword);
   cout << "Keyword: " << keyword << endl;
+  multithread::currentMapperWorking = N_mapper;
 
   chrono::system_clock::time_point start = chrono::system_clock::now();
   vector<multithread::mapper*> mappers;
@@ -214,7 +215,7 @@ int multithread::mapper::countLineByLine(){
   return count;
 }
 void multithread::mapper::start(){
-  multithread::currentMapperWorking++;
+  //multithread::currentMapperWorking++;
   while(true){
     multithread::fileQueueMTX.lock();
     if(multithread::file_queue.size() != 0){ //check if the queue have filename remaining
